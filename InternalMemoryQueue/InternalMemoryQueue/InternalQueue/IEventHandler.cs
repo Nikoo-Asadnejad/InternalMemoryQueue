@@ -2,7 +2,7 @@ using MediatR;
 
 namespace InternalMemoryQueue.InternalQueue;
 
-public interface IEventHandler<T> : INotificationHandler<T> where T : IInternalEvent 
+public interface IIEventHandler<T> : INotificationHandler<T> where T : IInternalEvent 
 {
     
 }
