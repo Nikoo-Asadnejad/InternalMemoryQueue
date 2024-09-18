@@ -1,23 +1,24 @@
-# InternalMemoryQueue
-
-This library will make an internal queue and publish your event into it, the queue will be processed in background.
-
-<h3> How To Add It ? </h3>
-
-To Add <code>InternalMemoryQueue</code>  and <code>InternalEventBus</code>  to your application just add following code to your di:
-</br>
-
-`services.InjectInternalEventBus();`
-</br>
-
-`InjectInternalEventBus()` is a extention method on `IServiceCollection` :
-
-<h3> How To Use It ? </h3>
-<ol>
-    <li>Create your event by inheriting from <code>IInternalEvent</code>.</li>
-    <li>Create your event handler by inheriting from <code>IIEventHandler</code>.</li>
-    <li>Inject <code>IEventBus</code> into your service.</li>
-    <li>Call the <code>Publish</code> method of <code>eventBus</code> and pass your event to it.</li>
-</ol>
 
 
+# Internal Memory Queue and Event Bus Library
+
+This library provides an internal queue system that publishes events into it, allowing the queue to be processed in the background for efficient event handling.
+
+## How To Add It
+
+To integrate `InternalMemoryQueue` and `InternalEventBus` into your application, simply add the following code to your dependency injection (DI) setup:
+
+```csharp
+services.InjectInternalEventBus();
+```
+
+`InjectInternalEventBus()` is an extension method available on `IServiceCollection`.
+
+## How To Use It
+
+1. **Create Your Event**: Inherit from `IInternalEvent` to define your custom event.
+2. **Create Your Event Handler**: Inherit from `IIEventHandler` to implement your event handling logic.
+3. **Inject IEventBus**: Add `IEventBus` to your service through dependency injection.
+4. **Publish Your Event**: Call the `Publish` method on `eventBus` and pass your event instance to it.
+
+This streamlined process ensures your application can handle events asynchronously, enhancing performance and responsiveness.
